@@ -6,13 +6,15 @@ rvm:
   - 2.6.4
 before_install:
   - gem install bundler || gem install bundler --version '< 2'
+  - gem install mysql2 -v '0.5.2' --source 'http://rubygems.org/'
+  - 
 script: bundle exec rake spec_travis
 gemfile: .travis.gemfile
 before_script:
   - mysql -e 'create database sequel_test;'
   - psql -c 'create database sequel_test;' -U postgres
-addons:
-  postgresql: "9.6"
-services:
-  - postgresql
-  - mysql
+#addons:
+#  postgresql: "9.6"
+#services:
+#  - postgresql
+#  - mysql
