@@ -1,5 +1,4 @@
 os: osx
-osx_image: 
 language: ruby
 rvm:
   - 2.3.5
